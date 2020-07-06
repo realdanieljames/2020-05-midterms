@@ -1,30 +1,99 @@
 
-function capitalizeSentences(sentence) {
-  let result = ''
-  let lower = sentence.toLowerCase()
-  let space = ' '
-  let period = '.'
-  for (let i = 0; i < sentence.length; i++) {
-    if (lower[i] === period) {
-      let upThisCharacter  = i + 2
-      upThisCharacter = upThisCharacter.toUpperCase()
+const capitalizeSentences =  function(paragraph){
+  let result = '';
+  
+  for (let i = 0; i < paragraph.length; i++){
+    if(paragraph[i -2] === '.' || i === 0) {
+      result = result + paragraph[i].toUpperCase();
+    }
+    else {
+      result = result + paragraph[i].toLowerCase();
     }
   }
-  return (upThisCharacter)
+  return result;
 }
 
 
-// const word = capitalizeSentences('Binge-watching is the best. why would you pause. when you can just. keep. going.')
 
+const isValidPassword =  function(password) {
+  if (password.length < 12) {
+    return false;
+  }
 
-
-
-function isValidPassword(password) {
-  properPassword = '';
-  
+  for (let i = 0; i < password.length; i ++) {
+    if (password[i] === ' ' ){
+      return false;
+    }
+  }
+  return true
 }
-return password
+
+
+const makeHalfSquares = function(nums) {
+  const results = [];
+  for (let i = 0; i < nums.length; i++) {
+    results.push(nums[i] ** 2 / 2);
+  }
+  return results; 
 }
+
+
+
+
+
+const countAs = function(grades) {
+  let count = 0;
+  for (let i = 0; i < grades.length; i ++) {
+    if (grades[i] >= 90) {
+      count = count + 1;
+    }
+  }
+  return count;
+}
+
+
+
+
+const deleteMiddleLetters = function(str) {
+  let result = '';
+  const middle  = Math.floor(str.length / 2);
+  for (let i = 0; i < str.length; i ++) {
+    if (str.length % 2 === 1 && i !== middle) {
+      result = result + str[i];
+    } else if (str.length % 2 === 0 && i !== middle && i !== middle - 1) {
+      result = result + str[i]
+    }
+  }
+  return result;
+}
+
+
+const lastIndexOfSpace =  function(str) {
+  for (let i = str.length - 1; i >= 0; i --) {
+    if (str[i] === ' ') {
+      return i;
+    }
+  }
+  return -1
+}
+
+
+
+
+const hyphenateName = function(name) {
+  let result = '';
+  for(let i = 0; i < name.length; i ++){
+    if (i === name.lastIndexOf(' ')) {
+      result =  result + '-';
+    } else {
+      result = result + name[i];
+    }
+  }
+  return result;
+}
+
+
+
 
 
 
