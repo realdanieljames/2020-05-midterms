@@ -1,4 +1,43 @@
 
+function capitalizeSentences(sentence) {
+  let result = ''
+  let lower = sentence.toLowerCase()
+  let space = ' '
+  let period = '.'
+  for (let i = 0; i < sentence.length; i++) {
+    if (lower[i] === period) {
+      let upThisCharacter  = i + 2
+      upThisCharacter = upThisCharacter.toUpperCase()
+    }
+  }
+  return (upThisCharacter)
+}
+
+
+// const word = capitalizeSentences('Binge-watching is the best. why would you pause. when you can just. keep. going.')
+
+
+
+
+function isValidPassword(password) {
+  properPassword = '';
+  
+}
+return password
+}
+
+
+
+
+
+
+
+
+
+//__________________________________________________________________//
+//__________________________________________________________________//
+
+
 
 if (typeof capitalizeSentences === 'undefined') {
   capitalizeSentences = undefined;
